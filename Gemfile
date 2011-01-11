@@ -6,7 +6,7 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
-gem 'haml'
+gem "haml-rails"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -28,5 +28,5 @@ gem 'haml'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-	gem 'rspec'
+	gem 'rspec-rails'
 end
