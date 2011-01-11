@@ -7,4 +7,5 @@ tmp/*
 doc/api
 doc/app
 *.swp
+*.lock
 * ̃
