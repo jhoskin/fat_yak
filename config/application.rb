@@ -36,14 +36,14 @@ module FatYak
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
-	# Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password]
-
 	# Configure generators values
-	config.generators.do |g|
+	config.generators do |g|
 		g.template_engine :haml
 		g.test_framework :rspec, :fixture => false
 	end
+
+	# Configure sensitive parameters which will be filtered from the log file.
+    config.filter_parameters += [:password]
 
   end
 end
