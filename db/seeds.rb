@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+#
+
+MeasurementUnitCategory.delete_all
+weight_category = MeasurementUnitCategory.create!(:title => "Weight")
+volume_category = MeasurementUnitCategory.create!(:title => "Volume")
+
+MeasurementUnit.delete_all
+MeasurementUnit.create!(:title => "Grams", :measurement_unit_category => weight_category)
+MeasurementUnit.create!(:title => "Millilitres", :measurement_unit_category => volume_category)
+
