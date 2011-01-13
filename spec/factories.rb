@@ -46,7 +46,7 @@ Factory.define :recipe do |recipe|
 	recipe.waste_yield				1
 	recipe.sellable_yield			50
 	recipe.association :sellable_yield_unit, :factory => :measurement_unit
-	recipe.association :waste_yield_unit, :factory => :measurement_unit
+	recipe.association :waste_yield_unit, :factory => :measurement_unit	
 end
 	
 
