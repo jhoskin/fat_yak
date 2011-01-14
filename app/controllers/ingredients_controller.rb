@@ -1,9 +1,13 @@
 class IngredientsController < ApplicationController
-  def index
-	  
+  def index	  
+	  @ingredients = Ingredient.all
   end
 
   def create
+	  @ingredient = Ingredient.new(params[:ingredient])
+	  if @ingredient.save
+		  redirect_to ingredients_path	  
+	  end
   end
 
   def show
@@ -16,6 +20,7 @@ class IngredientsController < ApplicationController
   end
 
   def new
+	  @ingredient = Ingredient.new
   end
 
 end

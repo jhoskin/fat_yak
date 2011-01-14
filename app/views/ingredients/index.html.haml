@@ -1,2 +1,9 @@
 %h1 Ingredients#index
 %p Find me in app/views/ingredients/index.html.haml
+
+- @ingredients.each do |ingredient|
+	.item 
+		=	ingredient.title
+#footer
+	= link_to "Add a new ingredient", :action => "new"
+

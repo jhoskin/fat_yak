@@ -1,2 +1,9 @@
 %h1 Ingredients#new
 %p Find me in app/views/ingredients/new.html.haml
+= form_for(@ingredient) do |f|
+	.field 
+		= f.label :title
+		= f.text_field :title
+	.action
+		= f.submit "Save"
+
