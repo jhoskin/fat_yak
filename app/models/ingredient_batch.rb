@@ -1,3 +1,18 @@
+# == Schema Information
+# Schema version: 20110112004649
+#
+# Table name: ingredient_batches
+#
+#  id               :integer         not null, primary key
+#  ingredient_id    :integer
+#  order_id         :integer
+#  quantity         :integer
+#  quantity_unit_id :integer
+#  purchase_cost    :decimal(, )
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 class IngredientBatch < ActiveRecord::Base
 	belongs_to :order
 	belongs_to :ingredient
