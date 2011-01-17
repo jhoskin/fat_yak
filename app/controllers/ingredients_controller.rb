@@ -1,6 +1,7 @@
 class IngredientsController < ApplicationController
   def index	  
 	  @ingredients = Ingredient.all
+	  @title = "All ingredients"
   end
 
   def create
@@ -22,6 +23,7 @@ class IngredientsController < ApplicationController
   end
 
   def new
+	  @title = "Add a new ingredient"
 	  @ingredient = Ingredient.new
   end
 
