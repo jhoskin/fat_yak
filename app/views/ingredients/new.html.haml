@@ -1,6 +1,7 @@
 %h1 Ingredients#new
 %p Find me in app/views/ingredients/new.html.haml
-= form_for(@ingredient) do |f|
+= render 'shared/error_messages', :target => @ingredient
+= form_for @ingredient do |f|
 	.field 
 		= f.label :title
 		= f.text_field :title

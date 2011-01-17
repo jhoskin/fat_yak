@@ -1,0 +1,8 @@
+- if target.errors.any?
+	.error_explanation
+		%h2 The following errors require your attention
+		%ul
+			-target.errors.full_messages.each do |msg|
+				%li= msg
+
+		

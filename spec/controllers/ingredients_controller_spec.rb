@@ -35,4 +35,26 @@ describe IngredientsController do
     end
   end
 
+  describe "POST 'create'" do
+
+	  describe "failure" do
+
+		  before(:each) do
+			  @attr = {:title => ""}
+		  end
+
+		  it "should not create a new ingredient" do
+			  lambda do
+				  post :create, :ingredient => @attr
+			  end.should_not change(Ingredient, :count)
+		  end
+
+		  it "should render the 'new' page" do
+			  post :create, :ingredient => @attr
+			  response.should render_template('new')
+		  end
+
+	  end
+  end
+
 end
