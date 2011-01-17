@@ -19,6 +19,8 @@ end
 Factory.define :user do |user|
 	user.name						"Bob Loblaw"
 	user.email						"abc@example.com"
+	user.password					"hunter2"
+	user.password_confirmation		"hunter2"
 end
 
 Factory.define :measurement_unit_category do |measurement_unit_category|
