@@ -1,7 +1,9 @@
 = render 'shared/flash_messages'
 = form_for :session, :url => sessions_path do |f|
-	= f.label :name
-	= f.text_field :name
-	= f.label :password
-	= f.password_field :password
-	= f.submit "Sign in"
+	.field
+		= f.label :name
+		= f.text_field :name
+		= f.label :password
+		= f.password_field :password
+	.action
+		= f.submit "Sign in"

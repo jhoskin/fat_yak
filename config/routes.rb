@@ -1,9 +1,9 @@
-FatYak::Application.routes.draw do
+FatYak::Application.routes.draw do  
 
-  
-
+	resources :suppliers
 	resources :ingredients
-	resources :sessions, :only => [:new, :create, :destroy]	
+	resources :sessions, :only => [:new, :create, :destroy]
+
 	get "home/index", :as => :home
 	root :to => "home#index"
 
