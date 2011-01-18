@@ -15,3 +15,9 @@ MeasurementUnit.delete_all
 MeasurementUnit.create!(:title => "Grams", :measurement_unit_category => weight_category)
 MeasurementUnit.create!(:title => "Millilitres", :measurement_unit_category => volume_category)
 
+# Dummy user - not for production
+if Rails.env != "production"
+	User.delete_all	
+	User.create!(:name => "yak", :email => "yak@dev.geek.nz", :password => "yak", :password_confirmation => "yak")
+end
+
