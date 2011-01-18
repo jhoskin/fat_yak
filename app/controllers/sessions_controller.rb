@@ -1,23 +1,41 @@
 class SessionsController < ApplicationController
+	
+	
+  SIGN_IN_TITLE = "sign in"
+  skip_before_filter :authenticate, :only => [:new, :create]
 
   def new
-	  @title = "sign in"
-  end
+	  @title = SIGN_IN_TITLE
+  end  
 
   def create
-	  user = User.authenticate(params[:session][:email],
+	  user = User.authenticate(params[:session][:name],
 							   params[:session][:password])
 	  
 	  if user.nil?
 		  flash.now[:error] = "Invalid email/password combination."
-		  @title = "sign in"
+		  @title = SIGN_IN_TITLE
 		  render "new"
-	  else
-		  flash.now[:success] = "Login success"
+	  else	
+		  puts home_path
+		  sign_in user
+		  redirect_to home_path
 	  end
   end
 
   def destroy
+	  sign_out
+	  redirect_to signin_path
+  end
+  
+  def sign_in(user)
+	  session[:remember_token] = user.id
+	  self.current_user = user
+  end
+  
+  def sign_out	  	  
+	  reset_session
+	  self.current_user = nil
   end
 
 end
