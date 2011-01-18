@@ -59,6 +59,25 @@ describe IngredientsController do
 		  end
 
 	  end
+
+	  describe "success" do
+		  before(:each) do
+			  @attr = {:title => "Olive oil"}
+		  end
+
+		  it "should create a new ingredient given valid attributes" do
+			  lambda do
+				  post :create, :ingredient => @attr
+			  end.should change(Ingredient, :count)
+		  end
+
+		  it "should redirect to the index page" do
+			  post :create, :ingredient => @attr
+			  response.should redirect_to(ingredients_path)
+		  end
+
+
+	  end
   end
 
 end
