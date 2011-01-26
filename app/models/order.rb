@@ -14,6 +14,7 @@
 class Order < ActiveRecord::Base
 	has_many :ingredient_batches
 	belongs_to :supplier
+  accepts_nested_attributes_for :ingredient_batches
 
 	validates :freight_cost, :presence => true
 	validates :delivered_at, :presence => true

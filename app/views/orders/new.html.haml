@@ -1,0 +1,15 @@
+= render 'shared/error_messages', :target => @order
+= form_for @order do |f|
+  = f.label :supplier
+  = f.collection_select :supplier_id, @suppliers, :id, :name, { :prompt => "Select a supplier" }
+  %br
+  - @order.ingredient_batches.each do |eb|
+    = f.fields_for ":ingredient_batches[]" do |ibf|
+      = ibf.collection_select :ingredient_id, @ingredients, :id, :title, {:prompt => "Select an ingredient"} 
+      = ibf.label :quantity_delivered
+      = ibf.number_field :quantity_delivered, {:min => 0}
+      = ibf.collection_select :quantity_in_stock_unit_id, @units, :id, :title
+      = ibf.label :purchase_cost
+      = ibf.number_field :purchase_cost, {:min => 0}
+  %br
+  = f.submit "Save"

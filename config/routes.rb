@@ -1,6 +1,6 @@
 FatYak::Application.routes.draw do  
-
-	resources :suppliers
+	resources :orders
+  resources :suppliers
 	resources :ingredients
 	resources :sessions, :only => [:new, :create, :destroy]
 
