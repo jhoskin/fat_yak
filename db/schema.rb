@@ -10,16 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110117042148) do
+ActiveRecord::Schema.define(:version => 20110125234650) do
 
   create_table "ingredient_batches", :force => true do |t|
     t.integer  "ingredient_id"
     t.integer  "order_id"
-    t.integer  "quantity"
-    t.integer  "quantity_unit_id"
+    t.integer  "quantity_delivered"
+    t.integer  "quantity_delivered_unit_id"
     t.decimal  "purchase_cost"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "quantity_in_stock"
+    t.integer  "quantity_in_stock_unit_id"
   end
 
   create_table "ingredients", :force => true do |t|

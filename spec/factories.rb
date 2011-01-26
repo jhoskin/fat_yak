@@ -9,9 +9,11 @@ Factory.define :order do |order|
 end
 
 Factory.define :ingredient_batch do |ingredient_batch|
-	ingredient_batch.quantity		10
+	ingredient_batch.quantity_delivered		10
+	ingredient_batch.quantity_in_stock		10
 	ingredient_batch.purchase_cost	5.00
-	ingredient_batch.association :quantity_unit, :factory => :measurement_unit
+	ingredient_batch.association :quantity_delivered_unit, :factory => :measurement_unit
+	ingredient_batch.association :quantity_in_stock_unit, :factory => :measurement_unit
 	ingredient_batch.association :ingredient, :factory => :ingredient
 	ingredient_batch.association :order, :factory => :order
 end

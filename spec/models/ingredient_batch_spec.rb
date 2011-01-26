@@ -20,13 +20,13 @@ describe IngredientBatch do
 		@batch.save.should_not be_true
 	end
 
-	it "Should require a quantity unit" do
-		@batch.quantity_unit = nil
+	it "Should require a quantity delivered unit" do
+		@batch.quantity_delivered_unit = nil
 		@batch.save.should_not be_true
 	end
 
-	it "Should require a quantity" do
-		@batch.quantity = nil
+	it "Should require a quantity delivered" do
+		@batch.quantity_delivered = nil
 		@batch.save.should_not be_true
 	end
 
@@ -34,5 +34,14 @@ describe IngredientBatch do
 		@batch.purchase_cost = nil
 		@batch.save.should_not be_true
 	end
+	
+  it "Should require a quantity in stock unit" do
+		@batch.quantity_in_stock_unit = nil
+		@batch.save.should_not be_true
+	end
 
+	it "Should require a quantity in stock" do
+		@batch.quantity_in_stock = nil
+		@batch.save.should_not be_true
+	end
 end
