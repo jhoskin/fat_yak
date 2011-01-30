@@ -4,8 +4,8 @@
   = f.collection_select :supplier_id, @suppliers, :id, :name, { :prompt => "Select a supplier" }
   %br
   - @order.ingredient_batches.each do |eb|
-    = f.fields_for ":ingredient_batches[]" do |ibf|
-      = ibf.collection_select :ingredient_id, @ingredients, :id, :title, {:prompt => "Select an ingredient"} 
+    = f.fields_for :ingredient_batches do |ibf|
+      = ibf.collection_select :ingredient, @ingredients, :id, :title, {:prompt => "Select an ingredient"} 
       = ibf.label :quantity_delivered
       = ibf.number_field :quantity_delivered, {:min => 0}
       = ibf.collection_select :quantity_in_stock_unit_id, @units, :id, :title

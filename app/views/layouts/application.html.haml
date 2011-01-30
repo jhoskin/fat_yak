@@ -1,17 +1,18 @@
 !!! 5
 %html
-	%head
-		%title= title
-		/[if lt IE 9]
-			%script{:src => "http://html5shiv.googlecode.com/svn/trunk/html5.js"}
-		= stylesheet_link_tag :all
-		= javascript_include_tag :defaults
-		= csrf_meta_tag
-	%body
-		.header
-			%h2= title
-		.main-wrapper
-			.main
-				= yield
+  %head
+    %title= title
+    /[if lt IE 9]
+      %script{:src => "http://html5shiv.googlecode.com/svn/trunk/html5.js"}
+    = stylesheet_link_tag :all
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  %body
+    .header
+      %h2= title
+    .main-wrapper
+      .main
+      = yield
 
 
